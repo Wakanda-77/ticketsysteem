@@ -19,8 +19,8 @@ class EventFactory extends Factory
         //Abdullllllllll
         return [
             'title' => fake()->name(),
-            'date' => now(),
-            'time' => now(),
+            'date' => fake()->dateTimeBetween('-10 days', '+30 days', null),
+            'time' => fake()->time(),
             'location' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'discription' => 'hallo world',
         ];

@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+
     @extends('layouts.app')
+    @extends('layouts.layout')
     @section('content')
     <div class="row">
         {{-- Abdullllllllll --}}
@@ -16,10 +9,10 @@
         <div class="col-sm-4">
           <div class="card">
             <div class="card-body">
-                <img class="card-img-top" src="" alt="Card image cap">
+                <img class="card-img-top" src="../clock.png" alt="Card image cap">
                 <h5 class="card-title">{{$event->title}}</h5>
                 <p class="card-text">{{$event->discription}}</p>
-                <p class="card-text">{{$event->date}}</p>             
+                <i class="fa-regular fa-clock fa-fw "><img src="{{URL('../clock.png')}}" alt="">{{$event->date->format('d-m-Y')}}</i>             
                 <p class="card-text">{{$event->time }}</p>
                 <a class="btn btn-primary" href="">submit</a>
               

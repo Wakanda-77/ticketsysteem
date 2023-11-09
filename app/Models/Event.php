@@ -14,6 +14,9 @@ class Event extends Model
         //Abdullllllllll
         return substr($value,0,5);
     }
+    protected $casts = [
+        'date'=> 'datetime:d-m-Y',
+    ];
 }
 
 

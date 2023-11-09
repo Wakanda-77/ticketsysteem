@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\EventController::class, 'index'])->name('event');
+Route::middleware(['auth,admin'])->prefix('admin')->group(function () {
+    Route::view('dashboard','dashboard')->name('admin.dashboard');
+});
