@@ -7,7 +7,7 @@
     <div class="card-body">
       This is some text within a card body.
     </div>
-    <a href="{{route('test')}}">test</a>
+    <a href="{{route('events.index')}}">test</a>
   </div> 
 </div>
 

@@ -18,12 +18,5 @@ class HomeController extends Controller
     {
         return view('admin/dashboard');
     }
-    public function test(Event $event)
-    {
-        $events = Event::where('date', '>=', Carbon::today())->orderby('time','asc')->get();
-        
-        return view('events/index')
-            ->with(compact('events'));
-        
-    }
+   
 }

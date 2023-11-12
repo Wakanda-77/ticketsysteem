@@ -23,10 +23,17 @@
                 <td>{{ $event->date->format('d-m-Y') }}</td>
                 <td>{{ $event->time }}</td>
                 <td>{{ $event->location }}</td>
-                <td class="text-right">€{{ $event->price }}</td>
+                {{-- <td class="text-right">€{{ $event->price }}</td> --}}
                 <td class="text-center">
                     <i class="fa-regular fa-pen-to-square"></i>
                 </td>
+                <td><a href="{{ route('events.edit', ['id' => $event->id]) }}">Bewerk evenement</a></td>
+                <td><form action="{{ route('events.destroy', $event->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                
+                    <button type="submit" onclick="return confirm('Weet je zeker dat je dit evenement wilt verwijderen?')">Verwijder</button>
+                </form></td>
             </tr>
             <a href=""></a>
             <a href=""></a>
