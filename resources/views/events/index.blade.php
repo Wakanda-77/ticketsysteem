@@ -1,0 +1,39 @@
+@extends('layouts.app')
+@extends('layouts.layout')
+@section('content')
+<div class="row">
+    <table class="border-collapse w-full tabular-nums">
+       
+        <tr class="bg-yellow-50">
+            <th>Titel</th>
+            <th>Datum</th>
+            <th>Tijd</th>
+            <th>Locatie</th>
+            <th>Prijs</th>
+            <th>edit</th>
+            <th>delete</th>
+
+           
+        </tr>
+        
+        @foreach($events as $event)
+        
+            <tr class="even:bg-gray-200">
+                <td>{{ $event->title }}</td>
+                <td>{{ $event->date->format('d-m-Y') }}</td>
+                <td>{{ $event->time }}</td>
+                <td>{{ $event->location }}</td>
+                <td class="text-right">€{{ $event->price }}</td>
+                <td class="text-center">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                </td>
+            </tr>
+            <a href=""></a>
+            <a href=""></a>
+        @endforeach
+        
+    
+    </table>
+</div>
+@endsection
+

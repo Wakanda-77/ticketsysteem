@@ -22,6 +22,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\EventController::class, 'index'])->name('event');
-Route::middleware(['auth,admin'])->prefix('admin')->group(function () {
-    Route::view('dashboard','dashboard')->name('admin.dashboard');
+Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class,'show'])->name('admin.dashboard');
+Route::get('/events/index', [App\Http\Controllers\HomeController::class,'test'])->name('test');
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::view('dashboard', 'admin/dashboard')->name('admin.dashboard');
+    // Route::resource('events');
 });

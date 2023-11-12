@@ -2,27 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        return view('home');
+        $events = Event::whereDate('date', '>', Carbon::now())->orderBy('date')->get();
+        return view('home')->with('events', $events);
+    }
+
+    public function show(Event $event)
+    {
+        return view('admin/dashboard');
+    }
+    public function test(Event $event)
+    {
+        $events = Event::where('date', '>=', Carbon::today())->orderby('time','asc')->get();
+        
+        return view('events/index')
+            ->with(compact('events'));
+        
     }
 }

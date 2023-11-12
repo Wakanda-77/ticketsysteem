@@ -1,23 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+<div class="row">
+    <img src="{{ asset('img/dashboard.png') }}" class="card-img-top" alt="Dashboard Image">
+<div class="card">
+    <div class="card-body">
+      This is some text within a card body.
     </div>
+    <a href="{{route('test')}}">test</a>
+  </div> 
 </div>
+
 @endsection

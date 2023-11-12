@@ -50,7 +50,7 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        
     }
 
     /**
