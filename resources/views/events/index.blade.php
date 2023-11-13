@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @extends('layouts.layout')
 @section('content')
 <div class="row">
@@ -35,8 +35,7 @@
                     <button type="submit" onclick="return confirm('Weet je zeker dat je dit evenement wilt verwijderen?')">Verwijder</button>
                 </form></td>
             </tr>
-            <a href=""></a>
-            <a href=""></a>
+            
         @endforeach
         
     

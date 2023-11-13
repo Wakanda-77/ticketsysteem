@@ -32,12 +32,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                    <a href="{{route('events.create')}}">create</a>
                     </ul>
-                    {{-- @if(auth()->user() && auth()->user()->IsAdmin() == 1)
-                        <a href="{{route('admin.Dashboard')}}">Dashboard</a>
-                    @endif --}}
-                    <!-- Right Side Of Navbar -->
+                   
                     <a href="{{route('admin.dashboard')}}">admin</a>
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->

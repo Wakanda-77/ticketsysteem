@@ -7,6 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
+    protected $fillable = [
+        'title',
+        'date',
+        'time',
+        'location',
+        'description',
+        'imageurl',
+
+
+    ];
     use HasFactory;
 
     public function getTimeAttribute($value)

@@ -17,11 +17,14 @@ class EventFactory extends Factory
     public function definition(): array
     {
         //Abdullllllllll
+        $faker = app(\Faker\Generator::class);
+        $faker->addProvider(new \Smknstd\FakerPicsumImages\FakerPicsumImagesProvider($faker));
         return [
             'title' => fake()->name(),
+            'imageurl'=> $faker->imageurl(),
             'date' => fake()->dateTimeBetween('-10 days', '+30 days', null),
             'time' => fake()->time(),
-            'location' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'location' => 'test', // password
             'discription' => 'hallo world',
         ];
     }

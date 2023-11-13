@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index()
     {
         $events = Event::whereDate('date', '>', Carbon::now())->orderBy('date')->get();
-        return view('home')->with('events', $events);
+        return view('welcome')->with('events', $events);
     }
 
     public function show(Event $event)

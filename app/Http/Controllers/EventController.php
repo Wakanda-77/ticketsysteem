@@ -33,7 +33,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('events.create');
     }
 
     /**
@@ -41,7 +41,27 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'date' => 'required|date',
+            'time' => 'required|string',
+            'discription'=> 'required|string',
+            'location' => 'string|max:255',
+            'imageurl' => 'string|max:255',  
+            
+        ]);
+        $event = Event::create([
+            'title'=> $request->title,
+            'date'=> $request->date,
+            'time'=> $request->time,
+            'discription'=> $request->discription,
+            'location'=> $request->location,
+            'imageurl'=> $request->imageurl,
+            ]);
+        $event->save();
+        return redirect()->route('events.index');
+                    
     }
 
     /**
@@ -72,15 +92,13 @@ class EventController extends Controller
         'title' => 'required|string|max:255',
         'date' => 'required|date',
         'time' => 'required|string',
-        'location' => 'required|string|max:255',
-        // 'price' => 'required|numeric',
+        'location' => '|string|max:255',
+        'imageurl' => 'required|string',        
     ]);
 
-    $event->title = $request->get('title');
-    $event->date = $request->get('date');
-    $event->time = $request->get('time');
-    $event->location = $request->get('location');
-    $event->save();
+    
+    $event->update($request->all());
+
 
     return redirect()->route('events.index');
 }

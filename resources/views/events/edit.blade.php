@@ -18,8 +18,11 @@
         <label for="time">Tijd:</label>
         <input type="text" name="time" value="{{ old('time', $event->time) }}" required>
 
-        <label for="location">Locatie:</label>
+        {{-- <label for="location">Locatie:</label>
         <input type="text" name="location" value="{{ old('location', $event->location) }}" required>
+        {{-- <label for="location">Locatie:</label> --}}
+        <label for="imageurl">imageurl:</label>
+        <input type="text" name="imageurl" value="{{ old('imageurl', $event->imageurl) }}" required> 
 
         {{-- <label for="price">Prijs:</label>
         <input type="number" name="price" value="{{ old('price', $event->price) }}" required> --}}

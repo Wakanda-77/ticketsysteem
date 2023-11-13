@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('title');
@@ -18,6 +19,7 @@ return new class extends Migration
             $table->time('time');
             $table ->string('location');
             $table->text('discription');
+            $table->string('imageurl')->default('default_imge.jpg');
             $table->timestamps();
         });
     }
