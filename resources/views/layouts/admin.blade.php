@@ -32,10 +32,15 @@
                 {{-- <x-nav-link :href="route('admin.events.index')" :active="request()->routeIs('admin.events.index')">Evenementen</x-nav-link> --}}
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    {{-- @if(Auth::check() && Auth::user()->isAdmin())
                     <ul class="navbar-nav me-auto">
-                        <a href="{{route('events.create')}}">create</a>
-                        </ul>
-                       
+                        <li><a href="{{ route('events.create') }}">create</a></li>
+                    </ul>
+                    <a href="{{ route('admin.dashboard') }}">admin</a>
+                    @endif --}}
+                    <ul class="navbar-nav me-auto">
+                        <li><a href="{{ route('events.create') }}">create</a></li>
+                    </ul>
                         <a href="{{route('admin.dashboard')}}">admin</a>
                     
                     

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
 <div class="row">
@@ -7,7 +7,6 @@
     <div class="card-body">
       This is some text within a card body.
     </div>
-    <a href="{{route('events.index')}}">test</a>
   </div> 
 </div>
 

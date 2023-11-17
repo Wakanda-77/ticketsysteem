@@ -19,7 +19,7 @@ return new class extends Migration
             $table->time('time');
             $table ->string('location');
             $table->text('discription');
-            $table->string('imageurl')->default('default_imge.jpg');
+            $table->string('image');
             $table->timestamps();
         });
     }

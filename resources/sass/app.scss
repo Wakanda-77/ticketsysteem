@@ -16,5 +16,65 @@
 body{
     background-color: rgb(237, 222, 203);
 }
+.wrapper{
+    margin: 0 33%;
+}
+.test{
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+}
+.logo-time{
+    display: flex;
+    align-items: center;
+}
+.logo-time i{
+    margin-right: 15px;
+}
+.cardIndex {
+    border-radius: 20px;
+    overflow: hidden; /* Ensure the overflow is hidden to prevent content overflow during the animation */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 20px;
+    position: relative;
+}
 
+.cardIndex:hover {
+    transform: translateY(-10px); /* Move the card up slightly on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Add a shadow for elevation on hover */
+}
 
+.card-body{
+    background-color: rgb(255, 249, 240);
+}
+nav{
+    background-color: brown;
+}
+.test a{
+color: white;
+}
+.container a{
+    color: white;
+}
+.plusIcon{
+    display: flex;
+    align-items: center;
+
+}
+.plusIcon i{
+    margin-right: 10px;
+}
+.card-body table{
+    width:100%;
+}
+
+.timeIcone i{
+    margin-right: 10px;
+}
+.timeIcone{
+    align-items: center;
+}
+.event{
+    border-bottom: 0.3px solid rgb(185, 185, 185);
+    height: 50px;
+}

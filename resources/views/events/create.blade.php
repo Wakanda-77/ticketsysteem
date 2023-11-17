@@ -3,32 +3,54 @@
 @extends('layouts.app') {{-- Je kunt 'app' vervangen door de naam van je layout --}}
 
 @section('content')
-    <h1>Bewerk evenement</h1>
+    
 
-    <form action="{{ route('events.store') }}" method="POST">
+    <form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
+        <div class="wrapper">
         
+              <h1>Bewerk evenement</h1>
+              
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">title</span>
+            <input type="text" class="form-control"   name="title"  required>
+      
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Datum</span>
+              <input type="date" class="form-control" name="date"  required>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Tijd</span>
+              <input type="text" class="form-control" name="time"  required>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">location</span>
+              <input type="text" class="form-control" name="location"  required>
+      
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">description </span>
+            <input type="text" class="form-control" name="discription"  required> 
 
-        <label for="title">Titel:</label>
-        <input type="text" name="title" " required>
+      
+            </div>
+            <div class="input-group">
+              <input type="file" class="form-control" name="image">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+              
+        </div>
+        </form>
 
-        <label for="date">Datum:</label>
-        <input type="date" name="date"  required>
+       
 
-        <label for="time">Tijd:</label>
-        <input type="text" name="time"  required>
-
-        <label for="location">location:</label>
-        <input type="text" name="location" v required>
+      
+        
+    
 
         
-    <label for="imageurl">imageurl:</label>
-        <input type="text" name="image" v required> 
-
-       <label for="discription">discription:</label>
-        <input type="text" name="discription"  required> 
-
-        <button type="submit">Bijwerken</button>
-    </form>
+           
+    
 @endsection
     

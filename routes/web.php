@@ -27,9 +27,18 @@ Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class,'show
 Route::delete('/events/{id}', [App\Http\Controllers\EventController::class, 'destroy'])->name('events.destroy');
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::view('dashboard', 'admin/dashboard')->name('admin.dashboard');
-    Route::get('/events/index', [App\Http\Controllers\EventController::class,'index2'])->name('events.index');
+    Route::get('/events/index', [App\Http\Controllers\EventController::class,'adminindex'])->name('events.index');
     Route::get('/events/{id}/edit', [App\Http\Controllers\EventController::class, 'edit'])->name('events.edit');
     Route::put('/events/{id}', [App\Http\Controllers\EventController::class, 'update'])->name('events.update');
     Route::get('/events/create', [App\Http\Controllers\EventController::class, 'create'])->name('events.create');
     Route::post('/events', [App\Http\Controllers\EventController::class, 'store'])->name('events.store');
+    Route::get('/users/index', [App\Http\Controllers\UserController::class,'index'])->name('users.index');
+    Route::get('/users/{id}/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
+    Route::put('/users/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
+    Route::get('/users/create', [App\Http\Controllers\UserController::class, 'create'])->name('users.create');
+    Route::post('/users', [App\Http\Controllers\UserController::class, 'store'])->name('users.store');
+
+
+
+
 });

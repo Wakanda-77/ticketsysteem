@@ -21,7 +21,7 @@ class EventFactory extends Factory
         $faker->addProvider(new \Smknstd\FakerPicsumImages\FakerPicsumImagesProvider($faker));
         return [
             'title' => fake()->name(),
-            'imageurl'=> $faker->imageurl(),
+            'image'=> $faker->imageurl(),
             'date' => fake()->dateTimeBetween('-10 days', '+30 days', null),
             'time' => fake()->time(),
             'location' => 'test', // password

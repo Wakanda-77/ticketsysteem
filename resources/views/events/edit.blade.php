@@ -3,31 +3,45 @@
 @extends('layouts.app') {{-- Je kunt 'app' vervangen door de naam van je layout --}}
 
 @section('content')
-    <h1>Bewerk evenement</h1>
+   
 
-    <form action="{{ route('events.update', $event->id) }}" method="POST">
+    <form action="{{ route('events.update', $event->id) }}" method="POST"  enctype="multipart/form-data">
         @csrf
         @method('PUT')
+        <div class="wrapper">
+        <h1>Bewerk evenement</h1>
+        <div class="input-group mb-3">
+        <span class="input-group-text" for="title">Titel:</span>
+        <input type="text" class="form-control" name="title" value="{{ old('title', $event->title) }}" required>
+        </div>
 
-        <label for="title">Titel:</label>
-        <input type="text" name="title" value="{{ old('title', $event->title) }}" required>
+        <div class="input-group mb-3">
+        <span class="input-group-text" for="date">Datum:</span>
+        <input type="date" class="form-control" name="date" value="{{ old('date', $event->date->format('Y-m-d')) }}" required>
+        </div>
 
-        <label for="date">Datum:</label>
-        <input type="date" name="date" value="{{ old('date', $event->date->format('Y-m-d')) }}" required>
+        <div class="input-group mb-3">
+        <span class="input-group-text" for="time">Tijd:</span> 
+        <input type="text" class="form-control" name="time" value="{{ old('time', $event->time) }}" required>
+        </div>
 
-        <label for="time">Tijd:</label>
-        <input type="text" name="time" value="{{ old('time', $event->time) }}" required>
+        <div class="input-group mb-3">
+        <span class="input-group-text" for="location">Locatie:</span>
+        <input type="text" class="form-control" name="location" value="{{ old('location', $event->location) }}" required>
+        </div>
+        
+        <div class="input-group mb-3">
+        <span class="input-group-text" for="discription">description:</span>
+        <input type="text" class="form-control" name="discription" value="{{ old('discription', $event->discription) }}" required>
+        </div>
 
-        {{-- <label for="location">Locatie:</label>
-        <input type="text" name="location" value="{{ old('location', $event->location) }}" required>
-        {{-- <label for="location">Locatie:</label> --}}
-        <label for="imageurl">imageurl:</label>
-        <input type="text" name="imageurl" value="{{ old('imageurl', $event->imageurl) }}" required> 
+        <div class="mb-3 form-check">
+            <input type="file" class="form-control" name="image">
+        </div>
+        
 
-        {{-- <label for="price">Prijs:</label>
-        <input type="number" name="price" value="{{ old('price', $event->price) }}" required> --}}
-
-        <button type="submit">Bijwerken</button>
+        <button type="submit" class="btn btn-primary">Bijwerken</button>
+        </div>
     </form>
     
 @endsection
