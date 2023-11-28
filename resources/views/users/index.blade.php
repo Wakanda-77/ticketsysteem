@@ -8,6 +8,7 @@
             <th>#iD</th>
             <th>Name</th>
             <th>Gmail</th>
+            <th>edit</th>
             <th>DELETE</th>
            
            

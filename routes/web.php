@@ -42,3 +42,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
 
 });
+// Route::middleware(['auth','user'])->prefix('user')->group(function (){
+//    Route::get
+
+// });
