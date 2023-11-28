@@ -24,8 +24,9 @@ class EventFactory extends Factory
             'image'=> $faker->imageurl(),
             'date' => fake()->dateTimeBetween('-10 days', '+30 days', null),
             'time' => fake()->time(),
-            'location' => 'test', // password
-            'discription' => 'hallo world',
+            'location' => 'ergens', // password
+            'discription' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam culpa, sequi molestiae sapiente rerum aspernatur, facilis quidem, itaque magnam libero quo doloribus harum pariatur ratione voluptates necessitatibus ipsum at neque.
+            ',
         ];
     }
 }

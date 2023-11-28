@@ -14,7 +14,7 @@
     margin: 0 15%;
 }
 body{
-    background-color: rgb(237, 222, 203);
+    background-color: rgb(223, 223, 223);
 }
 .wrapper{
     margin: 0 33%;
@@ -35,8 +35,10 @@ body{
     border-radius: 20px;
     overflow: hidden; /* Ensure the overflow is hidden to prevent content overflow during the animation */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    padding: 20px;
+    padding: 5px;
     position: relative;
+    background-color: blure;
+    margin-bottom: 20px;
 }
 
 .cardIndex:hover {
@@ -48,13 +50,16 @@ body{
     background-color: rgb(255, 249, 240);
 }
 nav{
-    background-color: brown;
+    background-color: #03312E;
 }
 .test a{
 color: white;
 }
 .container a{
     color: white;
+}
+.container a:hover{
+    color: red;
 }
 .plusIcon{
     display: flex;
@@ -69,7 +74,7 @@ color: white;
 }
 
 .timeIcone i{
-    margin-right: 10px;
+    margin-right: 11px;
 }
 .timeIcone{
     align-items: center;
